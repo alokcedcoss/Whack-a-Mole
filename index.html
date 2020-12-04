@@ -89,49 +89,49 @@ main {
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse" id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
         <section class="a">
             <div class="wrapper">
             <div class="mountain"></div>
-            <div class="mouse"></div>
+            <div class="mouse"  id="a"></div>
             </div>
         </section>
        
@@ -152,7 +152,9 @@ main {
   </section>
 </main>
 
+
 <script>
+  var flag=0;
 
 	
 	var count = 0;
@@ -171,10 +173,11 @@ function random()
       b.classList.remove("active");
     });
    r[random].classList.add("active");
+
  }
 
 
-  var interval = setInterval(() => random(),1100);
+  var interval = setInterval(() => random(),1000);
   var score = document.querySelector("#score >label");
   
 
@@ -183,22 +186,27 @@ function random()
 
      {
       if (b.classList.contains("active")) 
-      {
-        count++;
+      { 
+        if (flag==0){
+          count++;
+          b.classList.remove("active");
 
         document.getElementById('score').innerHTML = "Your Score are Here:"+count;
+        }
        
       }
     });
    });
+   
 	document.getElementById('btn1').style.display='none';
+  
 }
 function stop()
 {
 	document.getElementById('btn1').style.display='none';
 	document.getElementById('game').style.display='none';
 	document.getElementById('score').innerHTML = "Your Score are Here:"+count;
-	debugger;
+
 	if(highscore<count)
 	{
 		SetCookies(count);
@@ -228,7 +236,7 @@ function getCookies(highscore1)
   }
   return "";
 }
-
+ 
 
 
 </script>
